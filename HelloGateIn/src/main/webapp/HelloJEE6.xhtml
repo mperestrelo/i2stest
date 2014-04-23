@@ -1,0 +1,22 @@
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:form>
+		<h2>#{messages.title}</h2>
+		<h:panelGrid styleClass="inputFields" columns="2">
+
+			<h:outputText value="#{messages.firstName}" />
+			<h:inputText value="#{personBean.vorname}" />
+
+			<h:outputText value="#{messages.lastName}" />
+			<h:inputText value="#{personBean.name}" />
+
+			<h:outputText value="#{messages.new}" rendered="#{personBean.neu != null}" />
+			<h:outputText value="#{personBean.neu}" rendered="#{personBean.neu != null}" />
+
+			<h:commandButton value="#{messages.createPerson}"
+				action="#{personBean.create}" />
+		</h:panelGrid>
+	</h:form>
+</f:view>
